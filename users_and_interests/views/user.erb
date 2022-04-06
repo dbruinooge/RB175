@@ -1,0 +1,11 @@
+<h2><%= @user.capitalize %></h2>
+<p>Email address: <%= @attr[:email] %></p>
+<p>Interests: <%= @attr[:interests].join(", ").capitalize %></p>
+<br>
+<ul>
+  <% @users.each do |user, attr| %>
+    <% unless user.to_s == @user %>
+      <li><a href="/users/<%= user %>"><%= user.capitalize %></a></li>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+  <title><% @title %></title>
+</head>
+<body>
+  <%= yield %>
+  <br>
+  <% users = count_interests[:users] == 1 ? "user" : "users" %>
+  <% verb = count_interests[:users] == 1 ? "is" : "are" %>
+  <% interests = count_interests[:interests] == 1 ? "interest" : "interests" %>
+  <p>There <%= verb %> <%= count_interests[:users] %> <%= users %>
+     with a total of <%= count_interests[:interests] %> <%= interests %>.
+  </p>
+</body>
+</html>
